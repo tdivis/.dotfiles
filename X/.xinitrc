@@ -4,6 +4,9 @@ setxkbmap -layout "us,cz" -variant ",qwerty_bksl" -option "grp:shift_toggle,grp_
 #startkde
 #i3
 
+firefox -P "default" &
+thunderbird &
+pidgin &
 /home/glin/bin/dwmstatus/dwmstatus &
 while true; do
     /home/glin/bin/dwm/dwm
