@@ -1,0 +1,73 @@
+[user]
+	name = Tomas Divis
+	email = tomas.divis@nic.cz
+[color]
+	ui = true
+	diff = auto
+[core]
+	whitespace = trailing-space,tab-in-indent,tabwidth=4
+	excludesfile = /home/glin/.git_config_muj/gitignore
+
+[diff]
+    tool = kdiff3
+
+[merge]
+	tool = kdiff3
+
+[mergetool "kdiff3"]
+	path = /usr/bin/kdiff3
+	keepBackup = false
+    	trustExitCode = false
+
+[difftool "kdiff3"]
+	path = /usr/bin/kdiff3
+	keepBackup = false
+	trustExitCode = false
+
+[difftool]
+	prompt = false
+[alias]
+	xlog = log --pretty=format:\"%C(yellow)%h%Creset %Cgreen%ad%Creset %C(blue bold)%an%Creset: %Cred%d%Creset %s\" -C -M --date=short --graph --all
+        not-pushed-tags = !git show-ref --tags | grep -v -F \"$(git ls-remote --tags | awk '{ print $1 \" \" $2 }')\" || /bin/true
+        last-tag = !git tag | tr '-' '~' | sort -V | tail -1 | tr '~' '-'
+	showtool = "!sh -c 'if [ -z $1 ]; then REVISION=HEAD; else REVISION=$1; fi; git difftool $REVISION~ $REVISION\\' -"
+        co-last-tag = !git checkout $(git last-tag)
+        c-branch = !git symbolic-ref -q HEAD | cut -d/ -f3
+        pok = "!f() { \
+           echo \"poku\"; \
+        }; \
+        f"
+
+        mctm = "!f() { \
+            CURRENT_BRANCH=$(git c-branch); \
+            if [[ $CURRENT_BRANCH != \"master\" ]]; then \
+                echo \"We are merging $CURRENT_BRANCH to master\"; \
+                git checkout master && git merge --ff-only $CURRENT_BRANCH && git push && \
+                    if [[ $CURRENT_BRANCH != weblate ]]; then \
+                        git push origin :$CURRENT_BRANCH && git branch -d $CURRENT_BRANCH; \
+                    else \
+                        echo "Vetev weblate nemazu! Nezapomen kliknout na tlacitko v aplikaci!"; \
+                    fi; \
+            else \
+                echo \"We can't merge master to master!\"; \
+            fi; \
+        }; \
+        f"
+        mct = "!f() { \
+            CURRENT_BRANCH=$(git c-branch); \
+            if [[ $CURRENT_BRANCH != \"$1\" ]]; then \
+                echo \"We are merging $CURRENT_BRANCH to $1\"; \
+                git checkout $1 && git merge --ff-only $CURRENT_BRANCH && git push && \
+                    if [[ $CURRENT_BRANCH != weblate ]]; then \
+                        git push origin :$CURRENT_BRANCH && git branch -d $CURRENT_BRANCH; \
+                    else \
+                        echo "Vetev weblate nemazu! Nezapomen kliknout na tlacitko v aplikaci!"; \
+                    fi; \
+            else \
+                echo \"We can't merge $1 to $1!\"; \
+            fi; \
+        }; \
+        f"
+        del-prev-branch = !git branch -D $(git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n 1)
+[push]
+	default = upstream
