@@ -1,0 +1,1 @@
+{"editor":"[\"st\", \"emacs\", \"-nw\"]","shortcut":"Ctrl+Shift+E","extension":"txt"}
