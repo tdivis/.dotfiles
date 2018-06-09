@@ -15,6 +15,7 @@ alias e="emacs -nw"
 alias vim="emacs"
 alias ev="emacs -l ~/.emacs.d/glinEmacsDevel.el"
 alias vi="emacs -nw"
+alias ee="emacs -nw -nsl -Q"  # very fast emacs start, no site-lisp, splash etc - can be used instead of zile?
 alias z="zile"
 alias gm="/home/glin/programming/gitnic/git-modules/git-modules"
 alias ccat="pygmentize -g"
@@ -63,12 +64,13 @@ __exit_code()
 
 PS1="\$(__exit_code)\[\033[01;32m\]\u\[\033[01;31m\]@\h \[\033[01;37m\]\A\[\033[01;34m\]\w/ \[\033[01;37m\]\[\033[33m\]\`echo \$(__git_ps1)\`\[\033[00m\]\$ \[\033[00m\]"
 
-export PATH="$PATH:$HOME/.local/bin/:$HOME/bin/st:$HOME/bin/dwm:$HOME/bin/dwmstatus"
+export PATH="$PATH:$HOME/bin/:$HOME/.local/bin/:$HOME/bin/st:$HOME/bin/dwm:$HOME/bin/dwmstatus:/home/glin/bin/omniorb/bin/"
 export EDITOR="emacs -nw"
 
 export NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/glin/bin/omniorb_install/bin/"
 
 eval $(thefuck --alias fu)
 alias FU='export THEFUCK_REQUIRE_CONFIRMATION=False; fu; export THEFUCK_REQUIRE_CONFIRMATION=True'
