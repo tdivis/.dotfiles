@@ -69,7 +69,7 @@ export PATH="$PATH:$HOME/bin/:$HOME/.local/bin/:$HOME/bin/st:$HOME/bin/dwm:$HOME
 export EDITOR="emacs -nw"
 
 export NPM_PACKAGES="$HOME/.npm-packages"
-export PATH="$NPM_PACKAGES/bin:$PATH"
+export PATH="~/.local/bin/:$NPM_PACKAGES/bin:$PATH"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/glin/bin/omniorb_install/bin/"
 
