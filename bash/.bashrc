@@ -35,6 +35,7 @@ HISTFILESIZE=50000
 HISTSIZE=50000
 shopt -s histappend  # change the .bash_history file mode to append
 PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"  # write new commands to .bash_history and read new history from .bash_history
+HISTCONTROL="ignorespace:$HISTCONTROL"
 
 . ~/.bash_completion.d/*
 
