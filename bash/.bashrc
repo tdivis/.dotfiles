@@ -92,3 +92,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/glin/bin/omniorb_install/bin/"
 pyclean () {
     find . -regex '^.*\(__pycache__\|\.py[co]\)$' -print -delete
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/glin/1/google-cloud-sdk/path.bash.inc' ]; then . '/home/glin/1/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/glin/1/google-cloud-sdk/completion.bash.inc' ]; then . '/home/glin/1/google-cloud-sdk/completion.bash.inc'; fi
