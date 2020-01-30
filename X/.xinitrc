@@ -8,6 +8,8 @@ firefox -P "default" &
 thunderbird &
 pidgin &
 /home/glin/bin/dwmstatus/dwmstatus &
+mpd &
+/home/glin/bin/clipmenu/clipmenud &
 while true; do
     /home/glin/bin/dwm/dwm
     [ -e /tmp/dwm-exit ] && exit 0
