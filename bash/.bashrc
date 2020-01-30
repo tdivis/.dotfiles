@@ -27,9 +27,14 @@ tmux_split () {
     do
         tmux split-window -c $PREVIOUS_CURDIR/$DIR;
         tmux select-layout even-vertical; # cannot do once at the end, because windows would be too small to split
+        # tmux select-layout tiled; # cannot do once at the end, because windows would be too small to split
     done
 }
 alias tsplit="tmux_split"
+
+er () {
+  emacs "$1" --eval '(setq buffer-read-only t)'
+}
 
 HISTFILESIZE=50000
 HISTSIZE=50000
