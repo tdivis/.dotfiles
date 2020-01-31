@@ -7,7 +7,7 @@ setxkbmap -layout "us,cz" -variant ",qwerty_bksl" -option "grp:shift_toggle,grp_
 firefox -P "default" &
 thunderbird &
 pidgin &
-/home/glin/bin/dwmstatus/dwmstatus &
+/home/glin/bin/slstatus/slstatus &
 mpd &
 /home/glin/bin/clipmenu/clipmenud &
 st -c st_devel tmux new-session -s devel -A -c ~/programming/gitnic/4ginger /bin/bash &
