@@ -11,6 +11,6 @@ pidgin &
 mpd &
 /home/glin/bin/clipmenu/clipmenud &
 while true; do
-    /home/glin/bin/dwm/dwm
+    CM_LAUNCHER="rofi" /home/glin/bin/dwm/dwm
     [ -e /tmp/dwm-exit ] && exit 0
 done
