@@ -23,11 +23,16 @@ tmux_split () {
     PREVIOUS_CURDIR="`pwd`"
     cd $1
     shift
+    COUNTER=0
     for DIR in $@
     do
         tmux split-window -c $PREVIOUS_CURDIR/$DIR;
-        tmux select-layout even-vertical; # cannot do once at the end, because windows would be too small to split
-        # tmux select-layout tiled; # cannot do once at the end, because windows would be too small to split
+        let COUNTER=COUNTER+1
+        if [ $COUNTER -lt 10 ]; then
+            tmux select-layout even-vertical; # cannot do once at the end, because windows would be too small to split
+        else
+            tmux select-layout tiled; # cannot do once at the end, because windows would be too small to split
+        fi
     done
 }
 alias tsplit="tmux_split"
