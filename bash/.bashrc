@@ -83,8 +83,8 @@ export PATH="~/.local/bin/:$NPM_PACKAGES/bin:$PATH"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/glin/bin/omniorb_install/bin/"
 
-eval $(thefuck --alias fu)
-alias FU='export THEFUCK_REQUIRE_CONFIRMATION=False; fu; export THEFUCK_REQUIRE_CONFIRMATION=True'
+#eval $(thefuck --alias fu)
+#alias FU='export THEFUCK_REQUIRE_CONFIRMATION=False; fu; export THEFUCK_REQUIRE_CONFIRMATION=True'
 
 pyclean () {
     find . -regex '^.*\(__pycache__\|\.py[co]\)$' -print -delete
