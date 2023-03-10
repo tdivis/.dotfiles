@@ -19,6 +19,9 @@ alias ee="emacs -nw -nsl -Q"  # very fast emacs start, no site-lisp, splash etc 
 alias z="zile"
 alias gm="/home/glin/programming/gitnic/git-modules/git-modules"
 alias ccat="pygmentize -g"
+# set desktop notification flag of the window
+alias cbeep="echo -e '\a'"
+
 tmux_split () {
     PREVIOUS_CURDIR="`pwd`"
     cd $1
@@ -89,4 +92,3 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/glin/bin/omniorb_install/bin/"
 pyclean () {
     find . -regex '^.*\(__pycache__\|\.py[co]\)$' -print -delete
 }
-
