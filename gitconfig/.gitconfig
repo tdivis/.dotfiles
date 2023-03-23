@@ -75,3 +75,5 @@
 	sort = version:refname
 [versionsort]
 	suffix = -rc
+[commit]
+	verbose = true
