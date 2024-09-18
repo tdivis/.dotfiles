@@ -70,7 +70,8 @@
         f"
         del-prev-branch = !git branch -D $(git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n 1)
 [push]
-	default = upstream
+	autoSetupRemote = true
+	default = current
 [tag]
 	sort = version:refname
 [versionsort]
