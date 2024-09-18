@@ -44,8 +44,8 @@ er () {
   emacs "$1" --eval '(setq buffer-read-only t)'
 }
 
-HISTFILESIZE=50000
-HISTSIZE=50000
+HISTFILESIZE=500000
+HISTSIZE=500000
 shopt -s histappend  # change the .bash_history file mode to append
 PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"  # write new commands to .bash_history and read new history from .bash_history
 HISTCONTROL="ignorespace:$HISTCONTROL"
