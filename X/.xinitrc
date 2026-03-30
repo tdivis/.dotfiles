@@ -10,10 +10,12 @@ pidgin &
 /home/glin/bin/slstatus/slstatus &
 mpd &
 /home/glin/bin/clipmenu/clipmenud &
-st -c st_devel tmux new-session -s devel -A -c ~/programming/gitnic/4ginger /bin/bash &
-st -c st_local tmux new-session -s local -A /bin/bash &
-st -c st_remotes tmux new-session -s remotes -A /bin/bash &
-st -c st_merging tmux new-session -s merging /bin/bash \; source-file ~/scripts/tmux/merging & # no reattach (-A) because sourcing file again causes double tests windows
+st -c st_devel tmux new-session -s devel -A -c ~/programming/git /bin/bash \; new-window \; new-window \; new-window \; new-window &
+st -c st_local tmux new-session -s local -A /bin/bash \; new-window \; new-window \; new-window \; new-window &
+st -c st_remotes tmux new-session -s remotes -A /bin/bash  \; new-window \; new-window \; new-window \; new-window &
+st -c st_im tmux new-session -s im /bin/bash \; source-file ~/scripts/tmux/mm &
+st -c st_mp tmux new-session -s mp /bin/bash \; send 'ncmpcpp' ENTER &
+#st -c st_merging tmux new-session -s merging /bin/bash \; source-file ~/scripts/tmux/merging & # no reattach (-A) because sourcing file again causes double tests windows
 gentoo-pipewire-launcher &
 xautolock -detectsleep -time 5 -locker "slock" -nowlocker "slock" -notify 30 -notifier "notify-send -u critical -t 30000 -- 'LOCKING screen in 30 seconds'" &
 while true; do
