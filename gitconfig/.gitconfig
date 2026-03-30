@@ -32,7 +32,7 @@
         last-tag = !git tag | tr '-' '~' | sort -V | tail -1 | tr '~' '-'
 	showtool = "!sh -c 'if [ -z $1 ]; then REVISION=HEAD; else REVISION=$1; fi; git difftool $REVISION~ $REVISION\\' -"
         co-last-tag = !git checkout $(git last-tag)
-        c-branch = !git symbolic-ref -q HEAD | cut -d/ -f3
+        c-branch = !git symbolic-ref -q HEAD | cut -d/ -f3-
         pok = "!f() { \
            echo \"poku\"; \
         }; \
@@ -78,3 +78,8 @@
 	suffix = -rc
 [commit]
 	verbose = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
