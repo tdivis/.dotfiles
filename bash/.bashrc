@@ -21,6 +21,7 @@ alias gm="/home/glin/programming/gitnic/git-modules/git-modules"
 alias ccat="pygmentize -g"
 # set desktop notification flag of the window
 alias cbeep="echo -e '\a'"
+alias rg='rg --hidden'
 
 tmux_split () {
     PREVIOUS_CURDIR="`pwd`"
@@ -75,8 +76,7 @@ __exit_code()
     echo -e $OUTPUT
 }
 
-
-PS1="\$(__exit_code)\[\033[01;32m\]\u\[\033[01;31m\]@\h \[\033[01;37m\]\A\[\033[01;34m\]\w/ \[\033[01;37m\]\[\033[33m\]\`echo \$(__git_ps1)\`\[\033[00m\]\$ \[\033[00m\]"
+PS1="\$(__exit_code)\[\033[01;32m\]\u\[\033[01;31m\]@\h \[\033[01;37m\]\A \[\033[01;34m\] \w/ \[\033[01;37m\]\[\033[33m\]\`echo \$(__git_ps1)\`\[\033[00m\]\$ \[\033[00m\]"
 
 export PIP_INDEX_URL="https://pypi.nic.cz/cznic/devel"
 
@@ -84,6 +84,7 @@ export GOPATH="$(go env GOPATH)"
 export GOBIN="$GOPATH/bin"
 export PATH="$HOME/bin/:$HOME/.local/bin/:$HOME/bin/st:$HOME/bin/dwm:$HOME/bin/dwmstatus:/home/glin/bin/omniorb/bin/:$PATH:$GOBIN"
 export EDITOR="emacs -nw"
+export PYTHONBREAKPOINT="ipdb.set_trace" # Default breakpoint for Python's `breakpoint()` build-in.
 
 export NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="~/.local/bin/:$NPM_PACKAGES/bin:$PATH"
