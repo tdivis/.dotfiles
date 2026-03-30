@@ -1,0 +1,12 @@
+* {
+    font-size: 20px;
+
+}
+
+#window {
+    border: 2px solid #27c;
+}
+
+#inner-box {
+    margin: 5px;
+}

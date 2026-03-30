@@ -1,0 +1,13 @@
+profile work_office {
+    output DP-2 enable scale 1.400437636761488 position 0,0
+    output eDP-1 position 2742,1000
+}
+
+profile alone {
+    output eDP-1
+}
+
+profile home {
+    output HDMI-A-1 enable position 0,0
+    output eDP-1 position 2560,1000
+}

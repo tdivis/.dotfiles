@@ -1,0 +1,4 @@
+color=000000
+show-keyboard-layout
+indicator-thickness=2
+bs-hl-color=00FF00  # don't distinquish backspace presses
