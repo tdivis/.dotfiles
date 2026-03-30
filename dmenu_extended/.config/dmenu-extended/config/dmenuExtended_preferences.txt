@@ -26,6 +26,7 @@
     "indicator_alias": "",
     "indicator_edit": "*",
     "indicator_submenu": "->",
+    "interactive_shell": false,
     "menu": "rofi",
     "menu_arguments": [
         "-dmenu",
