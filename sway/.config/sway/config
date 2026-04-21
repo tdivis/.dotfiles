@@ -292,3 +292,4 @@ for_window [window_role="pop-up"] floating enable
 # EXTERNAL
 #include autostart.conf
 exec_always "pkill kanshi; kanshi"
+exec_always "pkill safeeyes; safeeyes"
