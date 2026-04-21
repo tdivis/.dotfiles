@@ -93,8 +93,11 @@ bindsym XF86AudioPlay exec mocp --toggle-pause
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+p exec --no-startup-id wofi --show drun
-exec dunst
+
+# Notifications daemon
+exec_always "pkill dunst; dunst"
 bindsym $mod+Shift+p exec dunstctl set-paused toggle; mode default
+
 # Set workspaces to monitors
 # workspace 1 output DP-2
 # workspace 2 output DP-2
